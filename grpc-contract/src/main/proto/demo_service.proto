@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "demo_service_dto.proto";
+
+package com.steven.grpcdemo.contract.service;
+
+option java_multiple_files = true;
+option java_outer_classname = "DemoServiceDto";
+
+service DemoService {
+    rpc Ping (com.steven.grpcdemo.contract.dto.PingRequest) returns (com.steven.grpcdemo.contract.dto.PingResponse) {}
+
+    rpc getPersonList (com.steven.grpcdemo.contract.dto.QueryParameter) returns (com.steven.grpcdemo.contract.dto.PersonList) {}
+}
+
